@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calculator-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: calculator
+  template:
+    metadata:
+      labels:
+        component: calculator
+    spec:
+      containers:
+        - name: calculator
+          image: aswwsa/flask_micro_k8s_calculator
+          ports:
+            - containerPort: 5000

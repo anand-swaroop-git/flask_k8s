@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subtraction-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: subtraction
+  template:
+    metadata:
+      labels:
+        component: subtraction
+    spec:
+      containers:
+        - name: subtraction
+          image: aswwsa/flask_micro_k8s_subtraction
+          ports:
+            - containerPort: 5002

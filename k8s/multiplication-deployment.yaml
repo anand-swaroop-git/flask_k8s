@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multiplication-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: multiplication
+  template:
+    metadata:
+      labels:
+        component: multiplication
+    spec:
+      containers:
+        - name: multiplication
+          image: aswwsa/flask_micro_k8s_multiplication
+          ports:
+            - containerPort: 5003

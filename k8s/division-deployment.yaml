@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: division-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: division
+  template:
+    metadata:
+      labels:
+        component: division
+    spec:
+      containers:
+        - name: division
+          image: aswwsa/flask_micro_k8s_division
+          ports:
+            - containerPort: 5004

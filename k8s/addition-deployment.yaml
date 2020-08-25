@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: addition-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: addition
+  template:
+    metadata:
+      labels:
+        component: addition
+    spec:
+      containers:
+        - name: addition
+          image: aswwsa/flask_micro_k8s_addition
+          ports:
+            - containerPort: 5001
