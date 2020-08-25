@@ -1,8 +1,9 @@
 # Flask Calculator (Multi Container on Kubernetes)
 
-> **Prerequisite:** Docker, Minikube and Kubernetes should be installed.
+> **Prerequisite:** Docker, Minikube and Kubernetes should be installed. 
+> **Prerequisite:** minikube start --driver=hyperkit
 
-- To run, just clone the repo, browse inside flask_micro and run `kubectl apply -f ./k8s`.
+- To run, just clone the repo, browse inside flask_k8s and run `kubectl apply -f ./k8s`.
 - Find your minikube ip by typing the command `minikube ip` and then access that IP in the browser. 
 - You will not need to build the images since the images are being pulled from Dockerhub.
 
